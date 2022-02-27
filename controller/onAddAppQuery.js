@@ -49,6 +49,8 @@ module.exports=async(id,msg,state,bot,keyboard,messageId)=>{
     const adedApp=await addApp(app)
     if ("bundle" in adedApp) {
         state.app.penndingApp.push(adedApp)
+        state.mode=""
+        state.control.mode=""
         bot.sendMessage(id, "Апку додано", { 
             reply_markup: {
                 inline_keyboard: [nav_keyboard[1]]

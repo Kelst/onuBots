@@ -12,6 +12,7 @@ module.exports=async (state,bot,id,idApp,messageId,text)=>{
     let user = await findUser({ userName: text });
     console.log(user);
     if (user.length>0) {
+        state.control.mode=""
         bot.sendMessage(id, `Користувач знайдений ${user[0].userName}:\n передати апку користувачу?`, {
             reply_markup: {
                 inline_keyboard: [

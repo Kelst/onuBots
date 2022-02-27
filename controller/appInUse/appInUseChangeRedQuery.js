@@ -39,6 +39,7 @@ module.exports=async (state,bot,id,messageId,text,choseApp)=>{
                 el.redirect_traff_percent = procent || 0;
             }
         })
+        state.control.mode=""
         bot.sendMessage(id, "Дані редіректу змінені.", {
             reply_markup: {
                 inline_keyboard: [[{

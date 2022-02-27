@@ -6,6 +6,7 @@ let messageId = '';
 
 const bot = new TelegramApi(process.env.TOKKEN, { polling: true });
 const state = {
+    lastMessageId:0,
 	app: {
 		activeApp: [],
 		confirmApp: [],
@@ -75,11 +76,17 @@ const appInUsedeleteRedirect = require('./controller/appInUse/appInUsedeleteRedi
 const appInUseChangeRedirect = require('./controller/appInUse/appInUseChangeRedirect');
 const appInUseChangeRedQuery = require('./controller/appInUse/appInUseChangeRedQuery');
 const checkGooglePlay = require('./controller/checkGooglePlay');
-
+const deleteAllMessage = require('./tools/deleteAllMessage');
+const getPenndingApp=require("./requestApi/getPenndingApp");
+const getModerateApp = require('./requestApi/getModerateApp');
+const getHideApp = require('./requestApi/getHideApp');
+const getBanApp = require('./requestApi/getBanApp');
+const getActiveApp = require('./requestApi/getActiveApp');
+const getInuseApp = require('./requestApi/getInuseApp');
+let count=0;
 //перевірка пріл якщо пройшли модерку
 async function checkAllPrills() {
 	const stateApp = await getStateApp();
-
 	if (stateApp != undefined) {
 		state.app = stateApp;
 	} else {
@@ -89,32 +96,37 @@ async function checkAllPrills() {
 //підключення монго
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, () => console.log('Connect DB'));
 
+bot.on("message",async msg=>{
+	const { id } = msg.chat;
+	if(msg.text!="/start"||state.control.mode!=bot_const_menu.addApp||state.control.mode != bot_const_menu.shareAppToUser||state.control.mode != bot_const_menu.setPriceAndBaner||state.control.mode != bot_const_menu.changeDateRedirect){
+		await removeMessage(id, bot,msg.message_id);
+		state.lastMessageId=state.lastMessageId+1;
+	}
+})
 //старт бота
-bot.onText(/\/start/, async (msg) => {
+bot.onText(/\/start/, async (msg) => {   
 	const { id } = msg.chat;
     state.mode=""
+    state.control.mode=""
+    state.control.idApp=""
 	await checkAllPrills();
 
-    // setTimeout(()=>{
-    //     setInterval(()=>{
-    //         checkGooglePlay(state)
-    //     },285000)
-       
-    // },9000)
-
-	onStart(id, state, bot, home_keyboard).then(async (e) => {
-		await removeMessage(id, bot, msg.message_id);
+	    onStart(id, state, bot, home_keyboard).then(async (e) => {
+		await deleteAllMessage(id, bot, msg.message_id);
 	});
-});
 
+
+    
+});                  
 
 bot.on('callback_query', async (query) => {
-	const id = query.message.chat.id;
+	const id = query.message.chat.id; 
 	const data = query.data;
 	switch (data) {
 		//додати прілку
 		case bot_const_menu.addApp:
             state.mode=bot_const_menu.addApp
+            state.control.mode=bot_const_menu.addApp
 			await onAddApp(id, state, bot, nav_keyboard).then(async () => {
 				removeMessage(query.message.chat.id, bot, query.message.message_id);
 			});
@@ -123,15 +135,18 @@ bot.on('callback_query', async (query) => {
             //пріли в розробці
             case bot_const_menu.penndingApp:
                 state.mode = bot_const_menu.penndingApp;
+                state.app.penndingApp=await getPenndingApp();
                 await penndingAppList(state,bot,id,query)
                 break;
                 //в модерації
                 case bot_const_menu.awaConfirm:
+                    state.app.moderateApp=await getModerateApp();
                    state.mode = bot_const_menu.awaConfirm;
                    await   awAppList(state,bot,id,query);
                break;
                //сховані
                case bot_const_menu.hideApp:
+                   state.app.hideApp=await getHideApp();
                 state.mode = bot_const_menu.hideApp;
                 await hideAppList(state,bot,id,query)
             //...................
@@ -139,20 +154,22 @@ bot.on('callback_query', async (query) => {
             break;
             //заблоковані
             case bot_const_menu.banApp:
+                state.app.banApp=await getBanApp();
             state.mode = bot_const_menu.banApp;
             await banAppList(state,bot,id,query);
             break;
             //в продажу
             case bot_const_menu.activeApp:
+                state.app.activeApp=await getActiveApp();
                 state.mode =await bot_const_menu.activeApp;
                 activeAppList(state,bot,id,query)
                 break;
             ///
             //використовуються
             case bot_const_menu.inUse:
-                
+                state.app.inuseApp=await getInuseApp()
                 state.mode = bot_const_menu.inUse;
-                 await     appInUseList(state,bot,id,query)
+                 await appInUseList(state,bot,id,query)
 
                 break;
             //
@@ -160,6 +177,7 @@ bot.on('callback_query', async (query) => {
 			state.mode = '';
 			state.control.idApp = '';
 			state.control.mode = '';
+            await checkAllPrills();
 			await bot.sendMessage(id, `Здоров був друже \nКонтроль всіх апок тут`, {
 					reply_markup: {
 						inline_keyboard: home_keyboard(state)
@@ -173,7 +191,7 @@ bot.on('callback_query', async (query) => {
 });
 
 
-//обробка пріл в розробці
+//обробка пріл в розробці 
 
 bot.on("callback_query", async query => {
     const id = query.message.chat.id;

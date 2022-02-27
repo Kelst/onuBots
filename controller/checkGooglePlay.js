@@ -4,7 +4,7 @@ module.exports =  function (state) {
    
   
 
-   state.app.moderateApp.forEach(async e=>{
+   state.app.moderateApp.forEach(async element=>{
       await gplay.app({ appId: `${element.bundle}` })
       .then(async () => {
          await hideApp({ app_id: element._id })
