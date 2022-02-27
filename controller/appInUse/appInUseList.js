@@ -11,6 +11,7 @@ module.exports=async (state,bot,id,query)=>{
                 }
             ]
         })
+        console.log(state.keyboard_inUse_app);
         bot.sendMessage(id,"В продажі", {
             reply_markup: {
                 inline_keyboard: [...state.keyboard_inUse_app, nav_keyboard[1]]
@@ -22,7 +23,7 @@ module.exports=async (state,bot,id,query)=>{
     } else {
         bot.sendMessage(id, "ПУСТО!", {
             reply_markup: {
-                inline_keyboard: nav_keyboard[1]
+                inline_keyboard:[ nav_keyboard[1]] 
             }
         }).then(async () => {
         

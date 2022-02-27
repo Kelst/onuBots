@@ -167,7 +167,7 @@ bot.on('callback_query', async (query) => {
             ///
             //використовуються
             case bot_const_menu.inUse:
-                state.app.inuseApp=await getInuseApp()
+                state.app.inuseApp=await getInuseApp()||[]
                 state.mode = bot_const_menu.inUse;
                  await appInUseList(state,bot,id,query)
 
