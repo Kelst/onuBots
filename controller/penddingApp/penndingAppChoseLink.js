@@ -40,10 +40,9 @@ module.exports=async (state,bot,query,data,choseApp,appID)=>{
         ]
  
     ]
-   bot.editMessageText(`*${choseApp.name}* , (${choseApp.type})\n${choseApp.bundle}\n*Лінк чи заглушка*: ${choseApp.url===""?"*заглушка*":"*лінк*"}\n*Уніків*: ${choseApp.installs}`, {
+   bot.editMessageText(`*${choseApp.name}* , (${choseApp.type})\n${choseApp.bundle}\nЛінк чи заглушка: ${choseApp.url===""?"заглушка":"лінк"}\nУніків: ${choseApp.installs}`, {
                 chat_id: chat.id,
                 message_id: message_id,
-                parse_mode: "Markdown",
                 reply_markup: {
                     inline_keyboard: [...penddingApp, [{
                         text: `⬅️  Назад`, callback_data: `pendding_app`
@@ -82,14 +81,13 @@ module.exports=async (state,bot,query,data,choseApp,appID)=>{
     ]
 
 ]
-bot.editMessageText(`*${choseApp.name}* , (${choseApp.type})\n${choseApp.bundle}\n*Лінк чи заглушка*: ${choseApp.url===""?"*заглушка*":"*лінк*"}\n*Уніків*: ${choseApp.installs}`, {
+bot.editMessageText(`${choseApp.name} , (${choseApp.type})\n${choseApp.bundle}\nЛінк чи заглушка: ${choseApp.url===""?"заглушка":"лінк"}\nУніків: ${choseApp.installs}`, {
              chat_id: chat.id,
              message_id: message_id,
-             parse_mode: "Markdown",
              reply_markup: {
                  inline_keyboard: [...penddingApp, [{
                      text: `⬅️  Назад`, callback_data: `pendding_app`
-                 }], nav_keyboard[1]]
+                 }], nav_keyboard[1]] 
              }
          })
 }

@@ -38,12 +38,12 @@ if(choseApp.redirect_traff_url!=''){
           
             
             const redirect = choseApp.redirect_traff_urls.length > 0 ? choseApp.redirect_traff_urls : "all";
-            bot.sendMessage(id, `${choseApp.name} (${choseApp.type}) - ${choseApp.price}$\nGoogle Play:${choseApp.google_play_url}\n\n*Покупець*: ${user?.userName}  @${user?.userTelegram_nik}\n*Дата покупки:* ${choseApp.dateConfirm}\n\n*Уніків всього:* ${choseApp.installs}\n\n*Неймінги:${choseApp.naming.length>0?"+":"-"}*\n\n*Глобальний лінк:*${choseApp.url==""?"-":choseApp.url}\n\n${choseApp.naming.length>0?"*Неймінги:*"+choseApp.naming.map(el=>{return "\n"+el.name+": "+el.name_ref})+"\n":"\n"}*Пуші:*\n- ${choseApp.notification_text}\n- ${choseApp.notification_start} ${choseApp.notification_interval} ${choseApp.max_count}\n\n*Редірект:* ${choseApp.redirect_traff_url!=""?"+":"-"}\n${choseApp.redirect_traff_url!=""?"( "+choseApp.redirect_traff_url+" "+redirect+" "+choseApp.redirect_traff_percent+"%"+" )":""}`, {
-                parse_mode: "Markdown",
+            bot.sendMessage(id, `${choseApp.name} (${choseApp.type}) - ${choseApp.price}$\nGoogle Play:${choseApp.google_play_url}\n\nПокупець: ${user?.userName}  @${user?.userTelegram_nik}\nДата покупки: ${choseApp.dateConfirm}\n\nУніків всього: ${choseApp.installs}\n\nНеймінги:${choseApp.naming.length>0?"+":"-"}\n\nГлобальний лінк:${choseApp.url==""?"-":choseApp.url}\n\n${choseApp.naming.length>0?"Неймінги:"+choseApp.naming.map(el=>{return "\n"+el.name+": "+el.name_ref})+"\n":"\n"}Пуші:\n- ${choseApp.notification_text}\n- ${choseApp.notification_start} ${choseApp.notification_interval} ${choseApp.max_count}\n\nРедірект: ${choseApp.redirect_traff_url!=""?"+":"-"}\n${choseApp.redirect_traff_url!=""?"( "+choseApp.redirect_traff_url+" "+redirect+" "+choseApp.redirect_traff_percent+"%"+" )":""}`, {
+              
                 reply_markup: {
                     inline_keyboard: [...in_useApp,[{ 
                         text: `⬅️  Назад`, callback_data: `in_use`
-                    }],nav_keyboard[1]]
+                    }],nav_keyboard[1]] 
                 }
             }).then(async () => {
                 await removeMessage(query.message.chat.id, bot, query.message.message_id);  

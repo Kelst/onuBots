@@ -28,8 +28,8 @@ module.exports=async (state,bot,id,data,query)=>{
             ],]
 
 
-            bot.sendMessage(id, `${choseApp.name} (${choseApp.type}) \n *Google Play*:${choseApp.google_play_url}\n*Ціна*: ${choseApp.price}$`, {
-            parse_mode: "Markdown",
+            bot.sendMessage(id, `${choseApp.name} (${choseApp.type}) \n Google Play:${choseApp.google_play_url}\nЦіна: ${choseApp.price}$`, {
+           
             reply_markup: {
                 inline_keyboard: [...activeApp,  [{
                     text: `⬅️  Назад`, callback_data: `act_app`

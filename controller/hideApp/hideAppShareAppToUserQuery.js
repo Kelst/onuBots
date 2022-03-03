@@ -9,7 +9,7 @@ module.exports=async (state,bot,id,idApp,messageId,text)=>{
     
     const choseApp = state.app.hideApp.find(el => el._id==idApp)
     
-    let user = await findUser({ userName: text });
+    let user = await findUser({ userTelegram_nik: text });
     console.log(user);
     if (user.length>0) {
         state.control.mode=""

@@ -104,7 +104,8 @@ bot.on("message",async msg=>{
 	}
 })
 //старт бота
-bot.onText(/\/start/, async (msg) => {   
+bot.onText(/\/start/, async (msg) => {  
+    if(msg.chat.id===289598095||msg.chat.id===384042079||msg.chat.id===5042766272) {
 	const { id } = msg.chat;
     state.mode=""
     state.control.mode=""
@@ -114,7 +115,7 @@ bot.onText(/\/start/, async (msg) => {
 	    onStart(id, state, bot, home_keyboard).then(async (e) => {
 		await deleteAllMessage(id, bot, msg.message_id);
 	});
-
+}
 
     
 });                  
@@ -284,6 +285,7 @@ bot.on("callback_query", async query => {
 bot.on("message",async msg => {
     messageId = msg.message_id;
    const { id } = msg.chat;
+console.log("Vlad")
     if (msg.text === "/start") return
 
     if ((state.mode === bot_const_menu.addApp)) {//розшарити користувачу

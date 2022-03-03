@@ -16,8 +16,8 @@ module.exports=async (state,bot,id,data,query)=>{
                 ],
         ]
     
-        bot.sendMessage(id, `*${choseApp.name}* , (${choseApp.type})\n*Google Play*: ${choseApp.google_play_url}\n*Дата відправки в модерацію*: ${choseApp.moderate_date}`, {
-            parse_mode: "Markdown",
+        bot.sendMessage(id, `${choseApp.name} , (${choseApp.type})\nGoogle Play: ${choseApp.google_play_url}\nДата відправки в модерацію: ${choseApp.moderate_date}`, {
+          
             reply_markup: {
                 inline_keyboard: [...penddingApp, [{
                     text: `⬅️  Назад`, callback_data: `aw_confirm`
