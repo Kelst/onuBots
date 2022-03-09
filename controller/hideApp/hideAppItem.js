@@ -25,7 +25,7 @@ module.exports=async (state,bot,id,data,query)=>{
             ],]
 
 
-        bot.sendMessage(id, `${choseApp.name} (${choseApp.type}) \nGoogle Play:${choseApp.google_play_url}`, {
+        bot.sendMessage(id, `${choseApp.name} (${choseApp.type}) \nGoogle Play: ${choseApp.google_play_url}`, {
             reply_markup: {
                 inline_keyboard: [...activeApp, [{
                     text: `⬅️  Назад`, callback_data: `hide_app`

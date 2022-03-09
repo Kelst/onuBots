@@ -16,7 +16,7 @@ module.exports=async (state,bot,id,data,query)=>{
                 ],
         ]
     
-        bot.sendMessage(id, `${choseApp.name} , (${choseApp.type})\nGoogle Play: ${choseApp.google_play_url}\nДата відправки в модерацію: ${choseApp.moderate_date}`, {
+        bot.sendMessage(id, `${choseApp.name}  (${choseApp.type})\nGoogle Play: ${choseApp.google_play_url}\nДата відправки в модерацію: ${choseApp.moderate_date}`, {
           
             reply_markup: {
                 inline_keyboard: [...penddingApp, [{
