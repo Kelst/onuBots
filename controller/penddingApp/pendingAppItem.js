@@ -23,7 +23,7 @@ module.exports=async (state,bot,id,data,query)=>{
     
         ]
     
-        bot.sendMessage(id, `${choseApp.name} , (${choseApp.type})\n${choseApp.bundle}\nЛінк чи заглушка: ${choseApp.url===""?"заглушка":"лінк"}\nУніків: ${choseApp.installs}`, {
+        bot.sendMessage(id, `${choseApp.name}  (${choseApp.type})\n${choseApp.bundle}\nЛінк чи заглушка: ${choseApp.url===""?"заглушка":"лінк"}\nУніків: ${choseApp.installs}`, {
 
             reply_markup: {
                 inline_keyboard: [...penddingApp, [{

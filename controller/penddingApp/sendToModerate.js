@@ -14,7 +14,7 @@ module.exports=async (id,bot,query,state,appID,choseApp)=>{
     choseApp.status="moderating",
     choseApp.url=""
     choseApp.installs=0
-    choseApp.notification_start=0;
+    
     choseApp.notification_title="";
     choseApp.notification_text=""
     choseApp.moderate_date=getDate()
