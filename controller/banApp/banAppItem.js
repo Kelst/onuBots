@@ -27,7 +27,11 @@ module.exports=async (state,bot,id,data,query)=>{
     bot.sendMessage(id, `${choseApp.name} (${choseApp.type}) - ${choseApp.price}$\nGoogle Play: ${choseApp.google_play_url}\n\nПокупець: @${user?.userTelegram_nik}\nДата покупки: ${choseApp.dateConfirm}\n\nУніків всього: ${choseApp.installs}\n\nНеймінги: ${choseApp.naming.length>0?"+":"-"}\n\nГлобальний лінк: ${choseApp.url==""?"-":choseApp.url}\n\n${choseApp.naming.length>0?"Неймінги: "+choseApp.naming.map(el=>{return "\n"+el.name+": "+el.name_ref})+"\n":"\n"}Пуші:\n- ${choseApp.notification_text}\n- ${choseApp.notification_start} ${choseApp.notification_interval} ${choseApp.max_count}\n\nРедірект: ${choseApp.redirect_traff_url!=""?"+":"-"}\n${choseApp.redirect_traff_url!=""?"("+choseApp.redirect_traff_url+" "+redirect+" "+choseApp.redirect_traff_percent+"%"+")":""}`, {
       
         reply_markup: {
-            inline_keyboard: [[{ 
+            inline_keyboard: [[
+                {
+                    text: `Видалити`, callback_data: `delete_app|${choseApp._id}`
+                }
+            ],[{ 
                 text: `⬅️  Назад`, callback_data: `ban_app`
             }],nav_keyboard[1]]
         }

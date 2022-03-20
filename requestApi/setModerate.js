@@ -7,7 +7,6 @@ module.exports = async function (req) {
         doc.status="moderating",
         doc.url=""
         doc.installs=0
-        doc.notification_start=0;
         doc.notification_title="";
         doc.notification_text=""
         doc.url=""

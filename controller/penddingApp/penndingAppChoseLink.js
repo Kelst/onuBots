@@ -40,7 +40,7 @@ module.exports=async (state,bot,query,data,choseApp,appID)=>{
         ]
  
     ]
-   bot.editMessageText(`*${choseApp.name}* , (${choseApp.type})\n${choseApp.bundle}\nЛінк чи заглушка: ${choseApp.url===""?"заглушка":"лінк"}\nУніків: ${choseApp.installs}`, {
+   bot.editMessageText(`${choseApp.name}, (${choseApp.type})\n${choseApp.bundle}\nЛінк чи заглушка: ${choseApp.url===""?"заглушка":"лінк"}\nУніків: ${choseApp.installs}`, {
                 chat_id: chat.id,
                 message_id: message_id,
                 reply_markup: {

@@ -11,7 +11,9 @@ module.exports=async(state,data,bot,id,query)=>{
         
         bot.sendMessage(id, "Апка успішно видалена", {
             reply_markup: {
-                inline_keyboard: [nav_keyboard[1]]
+                inline_keyboard: [[{
+                    text: `⬅️  Назад`, callback_data: `ban_app`
+                }],nav_keyboard[1]]
             }
         }).then(async () => {
         

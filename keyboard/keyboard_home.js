@@ -27,7 +27,7 @@ module.exports = function({ app }) {
 
 		[
 			{
-				text: `В продажі ${app.activeApp.length == 0 ? '' : '(' + app.activeApp.length + ')'}`,
+				text: `Придбані ${app.activeApp.length == 0 ? '' : '(' + app.activeApp.length + ')'}`,
 				callback_data: 'act_app'
 			}
 		],

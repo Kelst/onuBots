@@ -10,6 +10,12 @@ module.exports=async (state,bot,id,data,query)=>{
                         text: `Штовхнути в “сховані”`, callback_data: `hides_app|${choseApp._id}`
                     }
                 ],
+                [
+                    {
+                        text: `Штовхнути в “розробці”`, callback_data: `send_to_pending|${choseApp._id}`
+                    }
+                ],
+               
                 [{
                     text: `Видалити`, callback_data: `delete_app|${choseApp._id}`
                 }

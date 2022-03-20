@@ -83,6 +83,9 @@ const getHideApp = require('./requestApi/getHideApp');
 const getBanApp = require('./requestApi/getBanApp');
 const getActiveApp = require('./requestApi/getActiveApp');
 const getInuseApp = require('./requestApi/getInuseApp');
+const appInUseSendToBan = require('./controller/appInUse/appInUseSendToBan');
+const awAppSendToPending = require('./controller/awConfirm/awAppSendToPending');
+const banAppDelete = require('./controller/banApp/banAppDelete');
 let count=0;
 //перевірка пріл якщо пройшли модерку
 async function checkAllPrills() {
@@ -238,6 +241,11 @@ bot.on("callback_query", async query => {
         const choseApp=state.app.moderateApp.find(el=>el._id==appID)
         sendToHide(state,id,bot,choseApp,query,appID);
     }
+    if ((state.mode === bot_const_menu.awaConfirm) && (data.split("|")[0] === "send_to_pending")) {
+        const appID=data.split("|")[1]
+        const choseApp=state.app.moderateApp.find(el=>el._id==appID)
+        await awAppSendToPending(state,id,bot,data,query)
+    }
     if ((state.mode === bot_const_menu.awaConfirm) && (data.split("|")[0] === bot_const_menu.deleteApp)) {//видалити
          awAppDelete(state,data,bot,id,query)
         }
@@ -342,6 +350,9 @@ console.log("Vlad")
           await banAppItem(state,bot,id,data,query);
     
         }
+        if ((state.mode === bot_const_menu.banApp) && (data.split("|")[0] === bot_const_menu.deleteApp)) {//розшарити
+            await banAppDelete(state,data,bot,id,query)
+          }
     
     })
       //.................................................................................... 
@@ -397,6 +408,13 @@ console.log("Vlad")
                 const choseApp = state.app.inuseApp.find(el => { return el._id == appID });
                
            await   appInUseChangeRedirect(id,state,bot,choseApp,query,appID)
+        
+            }
+            if ((state.mode === bot_const_menu.inUse) && (data.split("|")[0] === "sendToBanfromUse")) {
+                const appID = data.split("|")[1];
+                const choseApp = state.app.inuseApp.find(el => { return el._id == appID });
+               
+           await   appInUseSendToBan (state,id,bot,data,query)
         
             }
         
