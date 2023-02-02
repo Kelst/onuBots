@@ -1,6 +1,6 @@
-module.exports=async(id,state,bot,home_keyboard,messageId)=>{
+module.exports=async(id,bot,home_keyboard,messageId)=>{
  
-    await bot.sendMessage(id, `Здоров був друже\nКонтроль всіх апок тут`, {
-        reply_markup: JSON.stringify({ inline_keyboard: home_keyboard(state),hide_keyboard: true })
+    await bot.sendMessage(id, `Привіт!!!\n я допоможу тобі у перенесенні конфігів між сфп`, {
+        reply_markup: JSON.stringify({ inline_keyboard: home_keyboard(),hide_keyboard: true })
     })
 }

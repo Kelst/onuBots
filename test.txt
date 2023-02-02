@@ -1,0 +1,10 @@
+no epon bind-onu sequence 3
+no epon bind-onu sequence 25
+no epon bind-onu sequence 45
+no epon bind-onu sequence 28
+no epon bind-onu sequence 43
+epon pre-config-template T1 binded-onu-llid 3 param 103
+epon pre-config-template T1 binded-onu-llid 25 param 125
+epon pre-config-template T1 binded-onu-llid 45 param 145
+epon pre-config-template T1 binded-onu-llid 28 param 128
+epon pre-config-template T1 binded-onu-llid 43 param 143
