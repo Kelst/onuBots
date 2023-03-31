@@ -1,0 +1,18 @@
+
+ no epon pre-config-template T1 binded-onu-llid 3 
+ interface epon0/3:3 
+ no epon onu port 1 ctc vlan mode 
+
+
+
+
+
+ Мак адреси і влани ону до переходу: 
+ мак : e067.b3a7.0656 влани: no vlan 
+
+
+ Конфіг сфп старої:  switchport mode dot1q-translating-tunnel
+ switchport pvid 135
+ switchport protected 1
+ switchport dot1q-translating-tunnel mode flat translate 1to1 3008 3008 0
+ switchport dot1q-translating-tunnel mode flat translate 1to1 500 500 0

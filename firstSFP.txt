@@ -1,0 +1,3 @@
+
+epon pre-config-template T1 binded-onu-llid 30 param 130
+no epon bind-onu sequence 30 

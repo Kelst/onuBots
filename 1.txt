@@ -1,0 +1,312 @@
+interface EPON0/1
+ epon pre-config-template T1 binded-onu-llid 8 param 108
+ epon pre-config-template T1 binded-onu-llid 20 param 120
+ epon pre-config-template T1 binded-onu-llid 24 param 124
+ epon pre-config-template T1 binded-onu-llid 31 param 131
+ epon pre-config-template T1 binded-onu-llid 32 param 132
+ epon pre-config-template T1 binded-onu-llid 33 param 133
+ epon pre-config-template T1 binded-onu-llid 34 param 134
+ epon pre-config-template T1 binded-onu-llid 35 param 135
+ epon pre-config-template T1 binded-onu-llid 36 param 136
+ epon pre-config-template T1 binded-onu-llid 37 param 137
+ epon pre-config-template T1 binded-onu-llid 38 param 138
+ epon pre-config-template T1 binded-onu-llid 39 param 139
+ epon pre-config-template T1 binded-onu-llid 40 param 140
+ epon pre-config-template T1 binded-onu-llid 41 param 141
+ epon pre-config-template T1 binded-onu-llid 42 param 142
+ epon pre-config-template T1 binded-onu-llid 43 param 143
+ epon pre-config-template T1 binded-onu-llid 44 param 144
+ epon pre-config-template T1 binded-onu-llid 45 param 145
+ epon pre-config-template T1 binded-onu-llid 46 param 146
+ epon pre-config-template T1 binded-onu-llid 47 param 147
+ epon pre-config-template T1 binded-onu-llid 48 param 148
+ epon pre-config-template T1 binded-onu-llid 49 param 149
+ epon pre-config-template T1 binded-onu-llid 50 param 150
+ epon pre-config-template T1 binded-onu-llid 51 param 151
+ epon pre-config-template T1 binded-onu-llid 52 param 152
+ epon pre-config-template T1 binded-onu-llid 53 param 153
+ epon pre-config-template T1 binded-onu-llid 54 param 154
+ epon pre-config-template T1 binded-onu-llid 55 param 155
+ epon pre-config-template T1 binded-onu-llid 56 param 156
+ epon pre-config-template T1 binded-onu-llid 57 param 157
+ epon pre-config-template T1 binded-onu-llid 58 param 158
+ epon pre-config-template T1 binded-onu-llid 59 param 159
+ epon pre-config-template T1 binded-onu-llid 60 param 160
+ epon pre-config-template T1 binded-onu-llid 61 param 161
+ epon pre-config-template T1 binded-onu-llid 62 param 162
+ epon pre-config-template T1 binded-onu-llid 63 param 163
+ epon pre-config-template T1 binded-onu-llid 64 param 164
+ epon pre-config-template T1 binded-onu-llid 5 param 105
+ epon pre-config-template T1 binded-onu-llid 10 param 110
+ epon pre-config-template T1 binded-onu-llid 17 param 117
+ epon bind-onu mac e067.b3c5.d6a4 1
+ epon bind-onu mac e067.b3ad.c73e 2
+ epon bind-onu mac e067.b3bc.ad8f 3
+ epon bind-onu mac e067.b399.8e12 4
+ epon bind-onu mac e0e8.e60b.5c30 5
+ epon bind-onu mac e067.b3c3.5c04 6
+ epon bind-onu mac e067.b39a.04c4 7
+ epon bind-onu mac e067.b3a6.f550 8
+ epon bind-onu mac e067.b3c3.a482 9
+ epon bind-onu mac e067.b3c3.9fda 10
+ epon bind-onu mac e067.b3c3.5bec 11
+ epon bind-onu mac e067.b383.73ae 12
+ epon bind-onu mac e067.b3c3.7062 13
+ epon bind-onu mac e067.b39c.2e0e 14
+ epon bind-onu mac e067.b383.817a 15
+ epon bind-onu mac e0e8.e615.5584 16
+ epon bind-onu mac e0e8.e615.abb0 17
+ epon bind-onu mac e0e8.e615.e95c 18
+ epon bind-onu mac e0e8.e615.e930 19
+ epon bind-onu mac e0e8.e642.cf6b 20
+ epon bind-onu mac e0e8.e63e.c7e3 21
+ epon bind-onu mac e0e8.e63e.c807 22
+ epon bind-onu mac e0e8.e63e.9a19 23
+ epon bind-onu mac e0e8.e678.b8ad 24
+ epon bind-onu mac 0008.3601.52c4 25
+ epon bind-onu mac 0008.3601.4fa4 26
+ epon bind-onu mac 0008.3601.41f8 27
+ epon bind-onu mac e0e8.e6b3.4e93 28
+ epon bind-onu mac e0e8.e6d4.1117 29
+ epon bind-onu mac e0e8.e6f0.45c7 30
+ epon bind-onu mac e0e8.e6f0.5a29 31
+ epon bind-onu mac e0e8.e6f0.6375 32
+ epon bind-onu mac e0e8.e6ff.8967 33
+ epon bind-onu mac e0e8.e6f0.4d23 34
+ epon bind-onu mac e0e8.e6ff.8521 35
+ epon bind-onu mac e0e8.e6ff.8543 36
+ epon bind-onu mac 70a5.6a01.5afc 37
+ epon bind-onu mac 70a5.6a01.8082 38
+ epon bind-onu mac 70a5.6a01.73ee 39
+ epon bind-onu mac 70a5.6a01.802e 40
+ epon bind-onu mac 70a5.6a01.304c 41
+ epon bind-onu mac 70a5.6a01.8058 42
+ epon bind-onu mac 70a5.6ab6.8352 43
+ epon bind-onu mac 70a5.6add.7e8b 44
+ epon bind-onu mac 70a5.6ac7.f462 45
+ epon bind-onu mac 70a5.6aea.831b 46
+ switchport trunk vlan-allowed 118,3010
+ switchport mode dot1q-translating-tunnel
+ switchport pvid 118
+ switchport dot1q-translating-tunnel mode flat translate 1to1 3010 3010 0
+ switchport dot1q-translating-tunnel mode flat translate 1to1 500 500 0
+ switchport protected 1
+!
+interface EPON0/1:1
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:2
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:3
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:4
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:5
+  epon onu port 1 ctc vlan mode tag 105 priority 0
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:6
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:7
+!
+interface EPON0/1:8
+  epon onu port 1 ctc vlan mode tag 108 priority 0
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:9
+!
+interface EPON0/1:10
+!
+interface EPON0/1:11
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:12
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:13
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:14
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:15
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:16
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:17
+!
+interface EPON0/1:18
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:19
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:20
+  epon onu port 1 ctc vlan mode tag 120 priority 0
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:21
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:22
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:23
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:24
+  epon onu port 1 ctc vlan mode tag 124 priority 0
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:25
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:26
+  epon onu port 1 ctc vlan mode tag 3010 priority 0
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:27
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:28
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:29
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:30
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:31
+  epon onu port 1 ctc vlan mode tag 131 priority 0
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:32
+  epon onu port 1 ctc vlan mode tag 132 priority 0
+  epon onu port 1 ctc loopback detect
+ epon sla upstream pir 1000000 cir 10
+ epon sla downstream pir 1000000 cir 10
+!
+interface EPON0/1:33
+  epon onu port 1 ctc vlan mode tag 133 priority 0
+ epon sla upstream pir 1000000 cir 512
+ epon sla downstream pir 1000000 cir 512
+!
+interface EPON0/1:34
+!
+interface EPON0/1:35
+  epon onu port 1 ctc vlan mode tag 135 priority 0
+ epon sla upstream pir 1000000 cir 512
+ epon sla downstream pir 1000000 cir 512
+!
+interface EPON0/1:36
+  epon onu port 1 ctc vlan mode tag 136 priority 0
+ epon sla upstream pir 1000000 cir 512
+ epon sla downstream pir 1000000 cir 512
+!
+interface EPON0/1:37
+  epon onu port 1 ctc vlan mode tag 137 priority 0
+ epon sla upstream pir 1000000 cir 512
+ epon sla downstream pir 1000000 cir 512
+!
+interface EPON0/1:38
+  epon onu port 1 ctc vlan mode tag 138 priority 0
+ epon sla upstream pir 1000000 cir 512
+ epon sla downstream pir 1000000 cir 512
+!
+interface EPON0/1:39
+  epon onu port 1 ctc vlan mode tag 139 priority 0
+ epon sla upstream pir 1000000 cir 512
+ epon sla downstream pir 1000000 cir 512
+!
+interface EPON0/1:40
+!
+interface EPON0/1:41
+  epon onu port 1 ctc vlan mode tag 141 priority 0
+ epon sla upstream pir 1000000 cir 512
+ epon sla downstream pir 1000000 cir 512
+!
+interface EPON0/1:42
+  epon onu port 1 ctc vlan mode tag 142 priority 0
+ epon sla upstream pir 1000000 cir 512
+ epon sla downstream pir 1000000 cir 512
+!
+interface EPON0/1:43
+  epon onu port 1 ctc vlan mode tag 143 priority 0
+ epon sla upstream pir 1000000 cir 512
+ epon sla downstream pir 1000000 cir 512
+!
+interface EPON0/1:44
+  epon onu port 1 ctc vlan mode tag 144 priority 0
+ epon sla upstream pir 1000000 cir 512
+ epon sla downstream pir 1000000 cir 512
+!
+interface EPON0/1:45
+  epon onu port 1 ctc vlan mode tag 145 priority 0
+ epon sla upstream pir 1000000 cir 512
+ epon sla downstream pir 1000000 cir 512
+!
+interface EPON0/1:46
+  epon onu port 1 ctc vlan mode tag 146 priority 0
+ epon sla upstream pir 1000000 cir 512
+ epon sla downstream pir 1000000 cir 512
+!

@@ -1,13 +1,14 @@
 
 
-function getMacOnu(config) {
-    let macs=config.match(/(.{4}\..{4}\..{4})/gm)
-    let configs=[]
-    for (const iterator of macs) {
-        configs.push({mac:iterator})
-    }
-        return configs
-    }
+    function getMacOnu(text) {
+        const entries = [];
+        let match;
+        let regex=/(.{4}\..{4}\..{4})/gm
+        while ((match = regex.exec(text)) !== null) {
+          entries.push(match[1]);
+        }
+        return entries;
+      }
 
     function getIdOnu(config,onus){
         let ids=config.match(/.{4}\..{4}\..{4} (\d*)/gm,'$1')  
@@ -63,21 +64,34 @@ function getMacOnu(config) {
        
 
     }
+    function getMacIds(str) {
+        let re = /epon bind-onu mac (\S+) ([\d]+)/g;
+        let arr = [];
+        let matches
+        while((matches = re.exec(str)) !== null) {
+            arr.push({mac: matches[1], id: matches[2]});
+        }
+        return arr;
+      }
+      function getTextAfterSlash(text) {
+        return text.split('/')[1][0];
+      }
+      
     function prepareConfig(config1,config2) {
         let onuList1,onuList2=[];
-        onuList1=getMacOnu(config1);
-        onuList1=getIdOnu(config1,onuList1);
-        onuList1.sfp=getSfp(config1)
-        onuList1=getConfigOnu(config1,onuList1)
+        onuList1=getMacIds(config1)
+        onuList1.sfp=getTextAfterSlash(config1)
+    
         //..............................................
-        onuList2=getMacOnu(config2);
-        onuList2=getIdOnu(config2,onuList2);
-        onuList2.sfp=getSfp(config2)
-        onuList2=getConfigOnu(config1,onuList2)
+        onuList2=getMacIds(config1)
+        onuList2.sfp=getTextAfterSlash(config1)
+        
         return {onuList1,onuList2}
         
+    }
+    function prepareConfigs(config1,config2) {
 
-
+        
     }
     function compareConfigs(config1,config2) {
         let res={}

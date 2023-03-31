@@ -12,12 +12,6 @@ module.exports = function() {
 				callback_data: 'delete_vlans'
 			}
 		],
-		[
-			{
-				text: `3`,
-				callback_data: 'aw_confirm'
-			}
-		],
         [
             {
                 text: `❇️  Головне меню`, callback_data: "return_home"

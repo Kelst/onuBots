@@ -1,0 +1,97 @@
+interface EPON0/1
+ epon pre-config-template T1 binded-onu-llid 1 param 101
+ epon pre-config-template T1 binded-onu-llid 2 param 102
+ epon pre-config-template T1 binded-onu-llid 3 param 103
+ epon pre-config-template T1 binded-onu-llid 4 param 104
+ epon pre-config-template T1 binded-onu-llid 5 param 105
+ epon pre-config-template T1 binded-onu-llid 6 param 106
+ epon pre-config-template T1 binded-onu-llid 7 param 107
+ epon pre-config-template T1 binded-onu-llid 8 param 108
+ epon pre-config-template T1 binded-onu-llid 9 param 109
+ epon pre-config-template T1 binded-onu-llid 10 param 110
+ epon pre-config-template T1 binded-onu-llid 11 param 111
+ epon pre-config-template T1 binded-onu-llid 12 param 112
+ epon pre-config-template T1 binded-onu-llid 13 param 113
+ epon pre-config-template T1 binded-onu-llid 14 param 114
+ epon pre-config-template T1 binded-onu-llid 15 param 115
+ epon pre-config-template T1 binded-onu-llid 16 param 116
+ epon pre-config-template T1 binded-onu-llid 17 param 117
+ epon pre-config-template T1 binded-onu-llid 18 param 118
+ epon pre-config-template T1 binded-onu-llid 19 param 119
+ epon pre-config-template T1 binded-onu-llid 20 param 120
+ epon pre-config-template T1 binded-onu-llid 21 param 121
+ epon pre-config-template T1 binded-onu-llid 22 param 122
+ epon pre-config-template T1 binded-onu-llid 23 param 123
+ epon pre-config-template T1 binded-onu-llid 24 param 124
+ epon pre-config-template T1 binded-onu-llid 25 param 125
+ epon pre-config-template T1 binded-onu-llid 26 param 126
+ epon pre-config-template T1 binded-onu-llid 27 param 127
+ epon pre-config-template T1 binded-onu-llid 28 param 128
+ epon pre-config-template T1 binded-onu-llid 29 param 129
+ epon pre-config-template T1 binded-onu-llid 30 param 130
+ epon pre-config-template T1 binded-onu-llid 31 param 131
+ epon pre-config-template T1 binded-onu-llid 32 param 132
+ epon pre-config-template T1 binded-onu-llid 33 param 133
+ epon pre-config-template T1 binded-onu-llid 34 param 134
+ epon pre-config-template T1 binded-onu-llid 35 param 135
+ epon pre-config-template T1 binded-onu-llid 36 param 136
+ epon pre-config-template T1 binded-onu-llid 37 param 137
+ epon pre-config-template T1 binded-onu-llid 38 param 138
+ epon pre-config-template T1 binded-onu-llid 39 param 139
+ epon pre-config-template T1 binded-onu-llid 40 param 140
+ epon pre-config-template T1 binded-onu-llid 41 param 141
+ epon pre-config-template T1 binded-onu-llid 42 param 142
+ epon pre-config-template T1 binded-onu-llid 43 param 143
+ epon pre-config-template T1 binded-onu-llid 44 param 144
+ epon pre-config-template T1 binded-onu-llid 45 param 145
+ epon pre-config-template T1 binded-onu-llid 46 param 146
+ epon pre-config-template T1 binded-onu-llid 47 param 147
+ epon pre-config-template T1 binded-onu-llid 48 param 148
+ epon pre-config-template T1 binded-onu-llid 49 param 149
+ epon pre-config-template T1 binded-onu-llid 50 param 150
+ epon pre-config-template T1 binded-onu-llid 51 param 151
+ epon pre-config-template T1 binded-onu-llid 52 param 152
+ epon pre-config-template T1 binded-onu-llid 53 param 153
+ epon pre-config-template T1 binded-onu-llid 54 param 154
+ epon pre-config-template T1 binded-onu-llid 55 param 155
+ epon pre-config-template T1 binded-onu-llid 56 param 156
+ epon pre-config-template T1 binded-onu-llid 57 param 157
+ epon pre-config-template T1 binded-onu-llid 58 param 158
+ epon pre-config-template T1 binded-onu-llid 59 param 159
+ epon pre-config-template T1 binded-onu-llid 60 param 160
+ epon pre-config-template T1 binded-onu-llid 61 param 161
+ epon pre-config-template T1 binded-onu-llid 62 param 162
+ epon pre-config-template T1 binded-onu-llid 63 param 163
+ epon pre-config-template T1 binded-onu-llid 64 param 164
+ epon bind-onu mac e067.b3bc.ad8f 1
+ epon bind-onu mac 0008.3601.52c4 2
+ epon bind-onu mac 70a5.6ac7.f462 3
+ epon bind-onu mac e0e8.e6b3.4e93 4
+ epon bind-onu mac 70a5.6ab6.8352 5
+ switchport mode dot1q-translating-tunnel
+ switchport pvid 115
+ switchport protected 1
+!
+interface EPON0/1:1
+ epon sla upstream pir 1000000 cir 512
+ epon sla downstream pir 1000000 cir 512
+!
+interface EPON0/1:2
+ epon sla upstream pir 1000000 cir 512
+ epon sla downstream pir 1000000 cir 512
+!
+interface EPON0/1:3
+  epon onu port 1 ctc vlan mode tag 103 priority 0
+ epon sla upstream pir 1000000 cir 512
+ epon sla downstream pir 1000000 cir 512
+!
+interface EPON0/1:4
+  epon onu port 1 ctc vlan mode tag 104 priority 0
+ epon sla upstream pir 1000000 cir 512
+ epon sla downstream pir 1000000 cir 512
+!
+interface EPON0/1:5
+  epon onu port 1 ctc vlan mode tag 105 priority 0
+ epon sla upstream pir 1000000 cir 512
+ epon sla downstream pir 1000000 cir 512
+!

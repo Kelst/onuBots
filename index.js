@@ -14,7 +14,64 @@ const {
   filterVlans,
 } = require("./tools/settings.js");
 let messageId = "";
+// перший крок витягнути маки і номери інтерфейсу
+function parseInterfaces(text) {
+  const lines = text.split('\n');
+  const interfaceMap = {};
+  let currentInterface = '';
 
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (line.startsWith('interface ')) {
+      currentInterface = line.substring(10);
+    } else if (line.startsWith('epon bind-onu mac ')) {
+      const parts = line.split(' ');
+      const mac = parts[3];
+      const onu = parts[4];
+      interfaceMap[mac] = `interface ${currentInterface}:${onu}`;
+     
+    }
+  }
+
+  const result = [];
+  for (const mac in interfaceMap) {
+    result.push({ mac, int: interfaceMap[mac],id:interfaceMap[mac].match(/:(\d+)/)[1],sfp:interfaceMap[mac].match(/(?<=\/)\d+(?=:)/)[0] });
+  }
+
+  return result;
+}
+let firstStep,secondStep,firstStep1,secondStep1,onuSfp,onuSfp1;
+let clearSfp=''//чистка 
+let clearVlans=''//видалення вланів
+// виведення інформації додаткової : влани ону якщо є, інтерфейси багатопортових ону
+let info=''
+
+
+
+function getVlans(text, intfArr) {
+  const result = [];
+
+  for (const intf of intfArr) {
+    const pattern = new RegExp(`^${intf.int}$([\\s\\S]*?)!`, 'gm');
+    const matches = text.matchAll(pattern);
+
+    const vlans = [];
+    for (const match of matches) {
+      const vlanPattern = /vlan mode tag (\d+)/g;
+      const vlanMatches = match[1].matchAll(vlanPattern);
+
+      for (const vlanMatch of vlanMatches) {
+        vlans.push(parseInt(vlanMatch[1]));
+      }
+    }
+
+    result.push({
+      vlan: vlans.length > 0 ? vlans : 'no vlan'
+    });
+  }
+
+  return result;
+}
 const bot = new TelegramApi(process.env.TOKKEN, { polling: true });
 const state = {
   mode: "",
@@ -54,7 +111,40 @@ bot.on("document", async function (msg) {
   } else if (state.mode === bot_const_menu.get_config && state.config2 == "") {
     state.config2 = await readableToString2(image);
     state.mode = "";
+   
+     firstStep=parseInterfaces(state.config1)//1
+     secondStep=getVlans(state.config1,parseInterfaces(state.config1))//2
+    firstStep.map((e,i)=>{return e["vlans"]=secondStep[i].vlan})//3
+    //2
+     firstStep1=parseInterfaces(state.config2)//1
+     secondStep1=getVlans(state.config2,parseInterfaces(state.config2))//2
+    firstStep1.map((e,i)=>{return e["vlans"]=secondStep1[i].vlan})//3
+     onuSfp=firstStep.filter(e=>firstStep1.find(a=>a.mac===e.mac))
+     onuSfp1=firstStep1.filter(e=>firstStep.find(a=>a.mac===e.mac)) 
+
+     onuSfp.forEach(e=>clearSfp+=`\nepon pre-config-template T1 binded-onu-llid ${e.id} param ${e.id<10?e.sfp+"0"+e.id:e.sfp+""+e.id}`)
+onuSfp.forEach(e=>clearSfp+=`\nno epon bind-onu sequence ${e.id} `)
+//видалення вланів для ппое абонів
+onuSfp1.forEach(e=>!Array.isArray (firstStep.find(a=>e.mac===a.mac).vlans)?clearVlans+=`\n no epon pre-config-template T1 binded-onu-llid ${e.id} `:``)
+onuSfp1.forEach(e=>!Array.isArray (firstStep.find(a=>e.mac===a.mac).vlans)?clearVlans+=`\n interface epon0/${e.sfp}:${e.id} \n no epon onu port 1 ctc vlan mode `:``)
+// виведення інформації додаткової : влани ону якщо є, інтерфейси багатопортових ону
+onuSfp1.forEach(e=>(Array.isArray(e.vlans)&&e.vlans.length>1)?info+=`Багатопортові ону\n ${"мак:"+e.mac + " влани " + e.vlans + " інтерфейс: "+ e.int + " старі влани: "+ onuSfp.find(a=>a.mac===e.mac).vlans } `:``)
+info+=`\n\n\n Мак адреси і влани ону до переходу: `
+onuSfp.forEach(e=>(Array.isArray(e.vlans))? info+=`\n мак : ${e.mac} влани: ${e.vlans} `:info+=`\n мак : ${e.mac} влани: ${e.vlans} `)
+info+=`\n\n\n Конфіг сфп старої: `
+function findSwitchports(text) {
+    const lines = text.split('\n');
+    const switchportLines = lines.filter(line => line.includes('switchport'));
+    return switchportLines.join('\n');
+  }
+
+  info+=findSwitchports(state.config1)
+  if(onuSfp.length===0){
+    info+="\n\n Нічого не перейшло"
+  }
+
     checkSFP(id, bot, keyboard_config).then(async () => {
+
       await deleteAllMessage(id, bot, msg.message_id);
     });
   }
@@ -74,15 +164,16 @@ bot.on("callback_query", async (query) => {
 
     case bot_const_menu.get_config_first_sfp:
       state.mode = bot_const_menu.get_config_first_sfp;
-      let configs = prepareConfig(state.config1, state.config2);
-      let res = compareConfigs(configs.onuList1, configs.onuList2);
+
+      
+
       try {
         fs.writeFileSync(
-          "test.txt",
-          res.noBindOnu.join("\n") + "\n" + res.template1.join("\n")
+          "firstSFP.txt",
+          clearSfp
         );
         bot
-          .sendDocument(id, "test.txt", {
+          .sendDocument(id, "firstSFP.txt", {
             caption: "Заповнення темплейтів, очищення ону із сфп",
             reply_markup: JSON.stringify({
               inline_keyboard: keyboard_config(),
@@ -99,19 +190,14 @@ bot.on("callback_query", async (query) => {
 
     case bot_const_menu.delete_vlans:
       state.mode = bot_const_menu.get_config_first_sfp;
-      let configs1 = prepareConfig(state.config1, state.config2);
-      let res1 = compareConfigs(configs1.onuList1, configs1.onuList2);
+
       try {
         fs.writeFileSync(
-          "test1.txt",
-          res1.noVlanMode.join("\n") +
-            "\n" +
-            res1.template2.join("\n") +
-            "\n\n Не іпое влани \n" +
-            res1.noIpoeVlans.join("\n")
+          "secondSFP.txt",
+          clearVlans +"\n\n\n"+info
         ); 
         bot
-          .sendDocument(id, "test1.txt", {
+          .sendDocument(id, "secondSFP.txt", {
             caption:
               "Видалення вланів пппое + якщо є конфіги на ону де немає ipoe вланів\n багатопортові onu",
             reply_markup: JSON.stringify({
