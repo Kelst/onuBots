@@ -1,3 +1,67 @@
 
-epon pre-config-template T1 binded-onu-llid 30 param 130
+epon pre-config-template T1 binded-onu-llid 1 param 401
+epon pre-config-template T1 binded-onu-llid 2 param 402
+epon pre-config-template T1 binded-onu-llid 4 param 404
+epon pre-config-template T1 binded-onu-llid 6 param 406
+epon pre-config-template T1 binded-onu-llid 7 param 407
+epon pre-config-template T1 binded-onu-llid 8 param 408
+epon pre-config-template T1 binded-onu-llid 9 param 409
+epon pre-config-template T1 binded-onu-llid 10 param 410
+epon pre-config-template T1 binded-onu-llid 11 param 411
+epon pre-config-template T1 binded-onu-llid 12 param 412
+epon pre-config-template T1 binded-onu-llid 13 param 413
+epon pre-config-template T1 binded-onu-llid 14 param 414
+epon pre-config-template T1 binded-onu-llid 15 param 415
+epon pre-config-template T1 binded-onu-llid 17 param 417
+epon pre-config-template T1 binded-onu-llid 18 param 418
+epon pre-config-template T1 binded-onu-llid 20 param 420
+epon pre-config-template T1 binded-onu-llid 21 param 421
+epon pre-config-template T1 binded-onu-llid 23 param 423
+epon pre-config-template T1 binded-onu-llid 24 param 424
+epon pre-config-template T1 binded-onu-llid 25 param 425
+epon pre-config-template T1 binded-onu-llid 27 param 427
+epon pre-config-template T1 binded-onu-llid 28 param 428
+epon pre-config-template T1 binded-onu-llid 29 param 429
+epon pre-config-template T1 binded-onu-llid 30 param 430
+epon pre-config-template T1 binded-onu-llid 32 param 432
+epon pre-config-template T1 binded-onu-llid 33 param 433
+epon pre-config-template T1 binded-onu-llid 35 param 435
+epon pre-config-template T1 binded-onu-llid 38 param 438
+epon pre-config-template T1 binded-onu-llid 45 param 445
+epon pre-config-template T1 binded-onu-llid 46 param 446
+epon pre-config-template T1 binded-onu-llid 49 param 449
+epon pre-config-template T1 binded-onu-llid 51 param 451
+epon pre-config-template T1 binded-onu-llid 52 param 452
+no epon bind-onu sequence 1 
+no epon bind-onu sequence 2 
+no epon bind-onu sequence 4 
+no epon bind-onu sequence 6 
+no epon bind-onu sequence 7 
+no epon bind-onu sequence 8 
+no epon bind-onu sequence 9 
+no epon bind-onu sequence 10 
+no epon bind-onu sequence 11 
+no epon bind-onu sequence 12 
+no epon bind-onu sequence 13 
+no epon bind-onu sequence 14 
+no epon bind-onu sequence 15 
+no epon bind-onu sequence 17 
+no epon bind-onu sequence 18 
+no epon bind-onu sequence 20 
+no epon bind-onu sequence 21 
+no epon bind-onu sequence 23 
+no epon bind-onu sequence 24 
+no epon bind-onu sequence 25 
+no epon bind-onu sequence 27 
+no epon bind-onu sequence 28 
+no epon bind-onu sequence 29 
 no epon bind-onu sequence 30 
+no epon bind-onu sequence 32 
+no epon bind-onu sequence 33 
+no epon bind-onu sequence 35 
+no epon bind-onu sequence 38 
+no epon bind-onu sequence 45 
+no epon bind-onu sequence 46 
+no epon bind-onu sequence 49 
+no epon bind-onu sequence 51 
+no epon bind-onu sequence 52 
