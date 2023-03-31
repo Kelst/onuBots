@@ -217,12 +217,15 @@ bot.on("callback_query", async (query) => {
       state.config1 = "";
       state.config2 = "";
       count = 0;
-      gooHome(id, bot, home_keyboard).then(async () => {
-        await removeMessage(
-          query.message.chat.id,
-          bot,
-          query.message.message_id
-        );
+      // gooHome(id, bot, home_keyboard).then(async () => {
+      //   await removeMessage(
+      //     query.message.chat.id,
+      //     bot,
+      //     query.message.message_id
+      //   );
+      // });
+      onStart(id, bot, home_keyboard).then(async (e) => {
+        await deleteAllMessage(id, bot,  query.message.message_id);
       });
 
       break;
