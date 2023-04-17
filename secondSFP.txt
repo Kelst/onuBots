@@ -1,110 +1,49 @@
 
- no epon pre-config-template T1 binded-onu-llid 1 
- no epon pre-config-template T1 binded-onu-llid 2 
- no epon pre-config-template T1 binded-onu-llid 3 
- no epon pre-config-template T1 binded-onu-llid 5 
  no epon pre-config-template T1 binded-onu-llid 6 
  no epon pre-config-template T1 binded-onu-llid 7 
- no epon pre-config-template T1 binded-onu-llid 8 
  no epon pre-config-template T1 binded-onu-llid 13 
  no epon pre-config-template T1 binded-onu-llid 14 
  no epon pre-config-template T1 binded-onu-llid 15 
- no epon pre-config-template T1 binded-onu-llid 16 
- no epon pre-config-template T1 binded-onu-llid 19 
- no epon pre-config-template T1 binded-onu-llid 22 
- no epon pre-config-template T1 binded-onu-llid 23 
- no epon pre-config-template T1 binded-onu-llid 24 
- no epon pre-config-template T1 binded-onu-llid 26 
- no epon pre-config-template T1 binded-onu-llid 27 
- no epon pre-config-template T1 binded-onu-llid 29 
- no epon pre-config-template T1 binded-onu-llid 31 
- no epon pre-config-template T1 binded-onu-llid 32 
- interface epon0/8:1 
+ interface epon0/12:6 
  no epon onu port 1 ctc vlan mode 
- interface epon0/8:2 
+ interface epon0/12:7 
  no epon onu port 1 ctc vlan mode 
- interface epon0/8:3 
+ interface epon0/12:13 
  no epon onu port 1 ctc vlan mode 
- interface epon0/8:5 
+ interface epon0/12:14 
  no epon onu port 1 ctc vlan mode 
- interface epon0/8:6 
- no epon onu port 1 ctc vlan mode 
- interface epon0/8:7 
- no epon onu port 1 ctc vlan mode 
- interface epon0/8:8 
- no epon onu port 1 ctc vlan mode 
- interface epon0/8:13 
- no epon onu port 1 ctc vlan mode 
- interface epon0/8:14 
- no epon onu port 1 ctc vlan mode 
- interface epon0/8:15 
- no epon onu port 1 ctc vlan mode 
- interface epon0/8:16 
- no epon onu port 1 ctc vlan mode 
- interface epon0/8:19 
- no epon onu port 1 ctc vlan mode 
- interface epon0/8:22 
- no epon onu port 1 ctc vlan mode 
- interface epon0/8:23 
- no epon onu port 1 ctc vlan mode 
- interface epon0/8:24 
- no epon onu port 1 ctc vlan mode 
- interface epon0/8:26 
- no epon onu port 1 ctc vlan mode 
- interface epon0/8:27 
- no epon onu port 1 ctc vlan mode 
- interface epon0/8:29 
- no epon onu port 1 ctc vlan mode 
- interface epon0/8:31 
- no epon onu port 1 ctc vlan mode 
- interface epon0/8:32 
+ interface epon0/12:15 
  no epon onu port 1 ctc vlan mode 
 
 
-
+Багатопортові ону
+ мак:70a5.6a5d.7963 влани 1211,1211,1211,1211 інтерфейс: interface EPON0/12:11 старі влани: 1315,1315,1315,1315 Багатопортові ону
+ мак:e0e8.e6dc.128d влани 1215,1215,1215,1215 інтерфейс: interface EPON0/12:15 старі влани: no vlan 
 
 
  Мак адреси і влани ону до переходу: 
- мак : e067.b335.2a6d влани: no vlan 
- мак : e067.b334.8256 влани: no vlan 
- мак : e0e8.e6b3.5a55 влани: 404 
- мак : e0e8.e6f0.b855 влани: 406 
- мак : e0e8.e6f0.4fb5 влани: no vlan 
- мак : e067.b38f.52f5 влани: no vlan 
- мак : 70a5.6ac8.3f1e влани: no vlan 
- мак : e067.b39b.bf64 влани: no vlan 
- мак : e067.b3ad.9b72 влани: 411 
- мак : e0e8.e6d4.10f1 влани: 412 
- мак : e067.b38f.3d43 влани: no vlan 
- мак : 70a5.6a01.6a6e влани: no vlan 
- мак : e0e8.e6c5.5ae2 влани: 415 
- мак : e067.b38f.82b9 влани: no vlan 
- мак : 8014.a805.b908 влани: no vlan 
- мак : 048d.3870.a7f8 влани: 420 
- мак : e067.b383.81b6 влани: 421 
- мак : e0e8.e6b3.4033 влани: 423 
- мак : e0e8.e642.e3b3 влани: 424 
- мак : e067.b33c.1d2a влани: no vlan 
- мак : e0e8.e6d4.10ef влани: no vlan 
- мак : e0e8.e6b3.3341 влани: no vlan 
- мак : e0e8.e6b3.3331 влани: 429 
- мак : e0e8.e6c5.5abe влани: 430 
- мак : e0e8.e6d3.ea61 влани: no vlan 
- мак : e0e8.e615.abe4 влани: no vlan 
- мак : e0e8.e6d4.1131 влани: 435 
- мак : 8014.a84b.2d98 влани: no vlan 
- мак : e0e8.e63e.7685 влани: no vlan 
- мак : e0e8.e6b3.351d влани: no vlan 
- мак : e0e8.e63e.8801 влани: no vlan 
- мак : e0e8.e6ff.67a5 влани: 451 
- мак : e067.b3c3.7198 влани: no vlan 
+ мак : 70a5.6ac8.3aea влани: 1301 
+ мак : e0e8.e6dc.128d влани: no vlan 
+ мак : 70a5.6ab6.c4ea влани: 1303 
+ мак : 70a5.6ac8.3acc влани: 1304 
+ мак : 70a5.6aea.7f97 влани: 1305 
+ мак : 70a5.6ab6.a26a влани: 1306 
+ мак : 70a5.6ac8.3b0c влани: 1307 
+ мак : e0e8.e6f0.5449 влани: no vlan 
+ мак : 70a5.6ac8.3b0e влани: 1309 
+ мак : 70a5.6ac8.3ae8 влани: 1310 
+ мак : 70a5.6aea.7595 влани: no vlan 
+ мак : 70a5.6ab6.b1c2 влани: 1312 
+ мак : e0e8.e63e.461d влани: no vlan 
+ мак : 70a5.6aea.61eb влани: no vlan 
+ мак : 70a5.6a5d.7963 влани: 1315,1315,1315,1315 
+ мак : 70a5.6aea.71cf влани: 1316 
 
 
- Конфіг сфп старої:  switchport trunk vlan-allowed 19,135,1799,2270
+ Конфіг сфп старої:  switchport trunk vlan-allowed 1771,2271,2353,2359
  switchport mode dot1q-translating-tunnel
- switchport pvid 135
- switchport dot1q-translating-tunnel mode flat translate 1to1 2270 2270 0
- switchport dot1q-translating-tunnel mode flat translate 1to1 19 19 0
- switchport dot1q-translating-tunnel mode flat translate 1to1 1799 1799 0
- switchport dot1q-translating-tunnel mode QinQ translate 1251-1270 135 0
+ switchport pvid 2359
+ switchport dot1q-translating-tunnel mode flat translate 1to1 2271 2271 0
+ switchport dot1q-translating-tunnel mode flat translate 1to1 2353 2353 0
+ switchport dot1q-translating-tunnel mode flat translate 1to1 1771 1771 0
  switchport protected 1

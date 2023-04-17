@@ -170,7 +170,7 @@ bot.on("callback_query", async (query) => {
       try {
         fs.writeFileSync(
           "firstSFP.txt",
-          clearSfp
+          clearSfp==""?"Немає співпадіть, нічого не перейшло":clearSfp
         );
         bot
           .sendDocument(id, "firstSFP.txt", {
@@ -217,13 +217,11 @@ bot.on("callback_query", async (query) => {
       state.config1 = "";
       state.config2 = "";
       count = 0;
-      // gooHome(id, bot, home_keyboard).then(async () => {
-      //   await removeMessage(
-      //     query.message.chat.id,
-      //     bot,
-      //     query.message.message_id
-      //   );
-      // });
+       firstStep=secondStep=firstStep1=secondStep1=onuSfp=onuSfp1=null
+       clearSfp=''//чистка 
+       clearVlans=''//видалення вланів
+      // виведення інформації додаткової : влани ону якщо є, інтерфейси багатопортових ону
+      info=''
       onStart(id, bot, home_keyboard).then(async (e) => {
         await deleteAllMessage(id, bot,  query.message.message_id);
       });
