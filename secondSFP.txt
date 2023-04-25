@@ -1,49 +1,19 @@
 
- no epon pre-config-template T1 binded-onu-llid 6 
- no epon pre-config-template T1 binded-onu-llid 7 
- no epon pre-config-template T1 binded-onu-llid 13 
- no epon pre-config-template T1 binded-onu-llid 14 
- no epon pre-config-template T1 binded-onu-llid 15 
- interface epon0/12:6 
- no epon onu port 1 ctc vlan mode 
- interface epon0/12:7 
- no epon onu port 1 ctc vlan mode 
- interface epon0/12:13 
- no epon onu port 1 ctc vlan mode 
- interface epon0/12:14 
- no epon onu port 1 ctc vlan mode 
- interface epon0/12:15 
- no epon onu port 1 ctc vlan mode 
 
 
-Багатопортові ону
- мак:70a5.6a5d.7963 влани 1211,1211,1211,1211 інтерфейс: interface EPON0/12:11 старі влани: 1315,1315,1315,1315 Багатопортові ону
- мак:e0e8.e6dc.128d влани 1215,1215,1215,1215 інтерфейс: interface EPON0/12:15 старі влани: no vlan 
+
 
 
  Мак адреси і влани ону до переходу: 
- мак : 70a5.6ac8.3aea влани: 1301 
- мак : e0e8.e6dc.128d влани: no vlan 
- мак : 70a5.6ab6.c4ea влани: 1303 
- мак : 70a5.6ac8.3acc влани: 1304 
- мак : 70a5.6aea.7f97 влани: 1305 
- мак : 70a5.6ab6.a26a влани: 1306 
- мак : 70a5.6ac8.3b0c влани: 1307 
- мак : e0e8.e6f0.5449 влани: no vlan 
- мак : 70a5.6ac8.3b0e влани: 1309 
- мак : 70a5.6ac8.3ae8 влани: 1310 
- мак : 70a5.6aea.7595 влани: no vlan 
- мак : 70a5.6ab6.b1c2 влани: 1312 
- мак : e0e8.e63e.461d влани: no vlan 
- мак : 70a5.6aea.61eb влани: no vlan 
- мак : 70a5.6a5d.7963 влани: 1315,1315,1315,1315 
- мак : 70a5.6aea.71cf влани: 1316 
+ мак : e0e8.e6ff.72b7 влани: 332 
 
 
- Конфіг сфп старої:  switchport trunk vlan-allowed 1771,2271,2353,2359
+ Конфіг сфп старої:  switchport trunk vlan-allowed 20,74,392,1772,1797,2275
  switchport mode dot1q-translating-tunnel
- switchport pvid 2359
- switchport dot1q-translating-tunnel mode flat translate 1to1 2271 2271 0
- switchport dot1q-translating-tunnel mode flat translate 1to1 2353 2353 0
- switchport dot1q-translating-tunnel mode flat translate 1to1 1771 1771 0
+ switchport pvid 392
+ switchport dot1q-translating-tunnel mode flat translate 1to1 74 74 0
+ switchport dot1q-translating-tunnel mode flat translate 1to1 2275 2275 0
+ switchport dot1q-translating-tunnel mode flat translate 1to1 1797 1797 0
+ switchport dot1q-translating-tunnel mode flat translate 1to1 1772 1772 0
+ switchport dot1q-translating-tunnel mode QinQ translate 1501-1590 20 0
  switchport protected 1

@@ -1,33 +1,3 @@
 
-epon pre-config-template T1 binded-onu-llid 1 param 1301
-epon pre-config-template T1 binded-onu-llid 2 param 1302
-epon pre-config-template T1 binded-onu-llid 3 param 1303
-epon pre-config-template T1 binded-onu-llid 4 param 1304
-epon pre-config-template T1 binded-onu-llid 5 param 1305
-epon pre-config-template T1 binded-onu-llid 6 param 1306
-epon pre-config-template T1 binded-onu-llid 7 param 1307
-epon pre-config-template T1 binded-onu-llid 8 param 1308
-epon pre-config-template T1 binded-onu-llid 9 param 1309
-epon pre-config-template T1 binded-onu-llid 10 param 1310
-epon pre-config-template T1 binded-onu-llid 11 param 1311
-epon pre-config-template T1 binded-onu-llid 12 param 1312
-epon pre-config-template T1 binded-onu-llid 13 param 1313
-epon pre-config-template T1 binded-onu-llid 14 param 1314
-epon pre-config-template T1 binded-onu-llid 15 param 1315
-epon pre-config-template T1 binded-onu-llid 16 param 1316
-no epon bind-onu sequence 1 
-no epon bind-onu sequence 2 
-no epon bind-onu sequence 3 
-no epon bind-onu sequence 4 
-no epon bind-onu sequence 5 
-no epon bind-onu sequence 6 
-no epon bind-onu sequence 7 
-no epon bind-onu sequence 8 
-no epon bind-onu sequence 9 
-no epon bind-onu sequence 10 
-no epon bind-onu sequence 11 
-no epon bind-onu sequence 12 
-no epon bind-onu sequence 13 
-no epon bind-onu sequence 14 
-no epon bind-onu sequence 15 
-no epon bind-onu sequence 16 
+epon pre-config-template T1 binded-onu-llid 32 param 332
+no epon bind-onu sequence 32 
